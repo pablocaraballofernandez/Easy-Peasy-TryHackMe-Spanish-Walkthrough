@@ -17,7 +17,7 @@
 
 # Índice  
 ### · Reconocimiento  
-### · Descodificación  
+### · Decodificación  
 ### · Esteganografía  
 ### · Acceso como usuario  
 ### · Escalada de privilegios  
@@ -68,11 +68,11 @@ Lanzamos otro gobuster sobre este directorios a ver si encontramos algo:
 
 ![imágenes](Images/56.png)
 
-
 Dentro de esta imagen vamos a ver el código:
 
 ![imágenes](Images/5.png)
 
+## Decodificacion  
 
 Encontramos la primera flag, pero codificada en base64: ZmxhZ3tmMXJzN19mbDRnfQ==, con el siguiente comando podemos descodificarla:
 
@@ -112,6 +112,8 @@ He ido probando en orden con John The Ripper, pero solo mostraré la foto del re
 
 ![imágenes](Images/13.png)
 
+## Esteganografía  
+
 Ahora debemos de encontrar la contraseña para ssh, después de bastante tiempo buscando opciones, decidí por intentar mirar lo archivos ocultos tras la foto de los números de la página anterior.
 
 Accedemos a la foto:
@@ -130,6 +132,8 @@ Ahora con cyberchef decodificaremos la contraseña:
 
 ![imágenes](Images/18.png)
 
+## Acceso como usuario
+
 Ya tenemos tanto usuario como contraseña, ahora solo deberemos conectarnos por ssh y hacer cat a la flag de user:
 
 ![imágenes](Images/20.png)
@@ -137,6 +141,8 @@ Ya tenemos tanto usuario como contraseña, ahora solo deberemos conectarnos por 
 Luego usando la herramienta online rot13, modificamos la flag para que sea la correcta:
 
 ![imágenes](Images/2021.png)
+
+## Escalada de privilegios
 
 La escalada de privilegios es bastante sencilla, debemos de acceder al directorio /var/www, allí encontraremos un archivo vulnerable:
 
