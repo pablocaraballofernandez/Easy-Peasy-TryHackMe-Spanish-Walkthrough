@@ -1,6 +1,6 @@
 <div align="center">
   
-# TryHackMe - IDE 
+# TryHackMe - EASYPEASY
 
 </div>
 
@@ -14,7 +14,19 @@
   [![TryHackME](https://img.shields.io/badge/OS-Linux-orange?style=for-the-badge)](#)
 
 </div>
-Para empezar como buenos hackers, lanzamos el siguiente comando de nmap:
+
+# Índice  
+### · Reconocimiento  
+### · Descodificación  
+### · Esteganografía  
+### · Acceso como usuario  
+### · Escalada de privilegios  
+
+## Reconocimiento
+
+Para empezar como buenos hackers, lanzamos el siguiente comando de nmap:  
+
+![imágenes](Images/1.png)
 
 **¿Por qué este comando de nmap?**
 
@@ -42,56 +54,103 @@ Asume que el host está activo.
 Sin esta opción, nmap solo escanearía los 1000 puertos más comunes.
 Con -p- examina el rango completo de puertos.
 
-Ahora lanzaré un gobuster con la wordlist common.txt (/usr/share/wordlist/dirb/common.txt) para intentar ubicar posibles directorios ocultos o vulnerables:
+Ahora lanzaré un gobuster con la wordlist common.txt (/usr/share/wordlist/dirb/common.txt) para intentar ubicar posibles directorios ocultos o vulnerables:  
 
-Vamos a curiosear en el directorio /hidden y solo encontramos esta imagen:
+![imágenes](Images/2.png)
 
-Lanzamos otro gobuster sobre este directorios a ver si encontramos algo:
+Vamos a curiosear en el directorio /hidden y solo encontramos esta imagen:  
+
+![imágenes](Images/3.png)
+
+Lanzamos otro gobuster sobre este directorios a ver si encontramos algo:  
+
+![imágenes](Images/4.png)
+
+![imágenes](Images/56.png)
+
 
 Dentro de esta imagen vamos a ver el código:
 
+![imágenes](Images/5.png)
+
+
 Encontramos la primera flag, pero codificada en base64: ZmxhZ3tmMXJzN19mbDRnfQ==, con el siguiente comando podemos descodificarla:
 
-Ahora vamos a lanzar un gobuster en el puerto 65524 que es donde tenemos el apache:
+![imágenes](Images/6.png)
 
-Encontramos el directorio robots.txt, nos introducimos dentro de el y encontramos un hash:
+Ahora vamos a lanzar un gobuster en el puerto 65524 que es donde tenemos el apache y encontramos el directorio robots.txt, nos introducimos dentro de el y encontramos un hash:
+
+![imágenes](Images/7.png)
 
 Utilizamos un identificador de hashes, yo he utilizado uno online pero hay otra herramientas igual de válidas con hashid o haiti:
 
-Con esto ya sabemos que el hash esta codificado en md5, con lo que sabemos que es vulnerable:
+![imágenes](Images/8.png)
 
-A través de la página ÑADIR HASH DECODER decodificamos el hash y obtenemos la flag:
+Con esto ya sabemos que el hash esta codificado en md5, con lo que sabemos que es vulnerable, a través de la página ÑADIR HASH DECODER decodificamos el hash y obtenemos la flag:
+
+![imágenes](Images/9.png)
 
 La tercera la encontre mirando el código del apache:
 
+![imágenes](Images/10.png)
+
 Mirando el código de la página, también encontramos el directorio oculto pero codificado, ahora utilizare cyberchef para la decodificación:
+
+![imágenes](Images/1011ç.png)
 
 Estaba codificado en base62.
 
 Ahora nos introducimos en este nuevo directorio descubierto y encontramos el siguiente hash medio oculto:
 
+![imágenes](Images/11.png)
+
 Ahora identificaremos el hash con haiti:
 
+![imágenes](Images/12.png)
+
 He ido probando en orden con John The Ripper, pero solo mostraré la foto del resultado final:
+
+![imágenes](Images/13.png)
 
 Ahora debemos de encontrar la contraseña para ssh, después de bastante tiempo buscando opciones, decidí por intentar mirar lo archivos ocultos tras la foto de los números de la página anterior.
 
 Accedemos a la foto:
 
+![imágenes](Images/15.png)
+
 Extraemos con stegseek usando la wordlist que nos da la room:
+
+![imágenes](Images/16.png)
 
 Y nos da la contraseña en binario:
 
+![imágenes](Images/17.png)
+
 Ahora con cyberchef decodificaremos la contraseña:
+
+![imágenes](Images/18.png)
 
 Ya tenemos tanto usuario como contraseña, ahora solo deberemos conectarnos por ssh y hacer cat a la flag de user:
 
+![imágenes](Images/20.png)
+
 Luego usando la herramienta online rot13, modificamos la flag para que sea la correcta:
+
+![imágenes](Images/2021.png)
 
 La escalada de privilegios es bastante sencilla, debemos de acceder al directorio /var/www, allí encontraremos un archivo vulnerable:
 
-Modificamos el archivo y añadimos un script con bash para conectarnos desde otra terminal abriendo un puerto de escucha:
+![imágenes](Images/21.png)
 
+![imágenes](Images/22.png)
+
+Modificamos el archivo y añadimos un script con bash para conectarnos desde otra terminal abriendo un puerto de escucha al puerto 8080:
+
+![imágenes](Images/23.png)
+
+![imágenes](Images/24.png)
+
+![imágenes](Images/25.png)
 
 
 
