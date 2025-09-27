@@ -160,12 +160,12 @@ Modificamos el archivo y añadimos un script con bash para conectarnos desde otr
 
 ### Explicación de la escalada de privilegios
 
-Accesdemos a /var/www (directorio del servidor).
-Encuentramos un cron job con permisos para modificarlo.
-Añadimos una reverse shell en bash al archivo.
-Lanzamos un listener en el puerto 8080 con nc -lvnp 8080
-Cuando el script se ejecuta, obtienemos privilegios como root.
-
+Accesdemos a /var/www (directorio del servidor).  
+Encuentramos un cron job con permisos para modificarlo.  
+Añadimos una reverse shell en bash al archivo.  
+Lanzamos un listener en el puerto 8080 con nc -lvnp 8080.  
+Cuando el script se ejecuta, obtienemos privilegios como root.  
+ 
 
 
 
