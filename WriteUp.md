@@ -56,6 +56,10 @@ Con -p- examina el rango completo de puertos.
 
 Ahora lanzaré un gobuster con la wordlist common.txt (/usr/share/wordlist/dirb/common.txt) para intentar ubicar posibles directorios ocultos o vulnerables:  
 
+**dir:** le decimos a gobuster que vamos a buscar directorios.  
+**-u:** indicamos que vamos a proporcionar la URL.  
+**-W:** la wordlist que vamos a utilizar.  
+
 ![imágenes](Images/2.png)
 
 Vamos a curiosear en el directorio /hidden y solo encontramos esta imagen:  
