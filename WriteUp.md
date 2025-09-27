@@ -189,6 +189,26 @@ Añadimos una reverse shell en bash al archivo.
 Lanzamos un listener en el puerto 8080 con nc -lvnp 8080.  
 Cuando el script se ejecuta, obtienemos privilegios como root.  
  
+# DISCLAIMER
+
+Este writeup es SOLO para propósitos educativos.  
+Úsalo responsablemente en entornos autorizados como TryHackMe.  
+
+**Autor:** pablocaraballofernandez  
+**Plataforma:** TryHackMe
+
+</div>
+
+
+<div align="center">
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pablo-caraballo-fern%C3%A1ndez-a12938358/)
+  [![TryHackMe](https://img.shields.io/badge/TryHackMe-212C42?style=for-the-badge&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/CyberPablo)
+  [![HackTheBox](https://img.shields.io/badge/HackTheBox-111927?style=for-the-badge&logo=hackthebox&logoColor=9FEF00)](https://ctf.hackthebox.com/user/profile/872564)
+  .[![Cyberdefenders](https://img.shields.io/badge/CyberDefenders-1E3A5F?style=for-the-badge&logo=shield&logoColor=white)](https://cyberdefenders.org/p/cybersecpcarfer)
+  
+</div>
+
 
 
 
