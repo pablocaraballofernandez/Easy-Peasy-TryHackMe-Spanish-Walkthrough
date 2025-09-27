@@ -58,6 +58,26 @@ Ahora identificaremos el hash con haiti:
 
 He ido probando en orden con John The Ripper, pero solo mostraré la foto del resultado final:
 
+Ahora debemos de encontrar la contraseña para ssh, después de bastante tiempo buscando opciones, decidí por intentar mirar lo archivos ocultos tras la foto de los números de la página anterior.
+
+Accedemos a la foto:
+
+Extraemos con stegseek usando la wordlist que nos da la room:
+
+Y nos da la contraseña en binario:
+
+Ahora con cyberchef decodificaremos la contraseña:
+
+Ya tenemos tanto usuario como contraseña, ahora solo deberemos conectarnos por ssh y hacer cat a la flag de user:
+
+Luego usando la herramienta online rot13, modificamos la flag para que sea la correcta:
+
+La escalada de privilegios es bastante sencilla, debemos de acceder al directorio /var/www, allí encontraremos un archivo vulnerable:
+
+Modificamos el archivo y añadimos un script con bash para conectarnos desde otra terminal abriendo un puerto de escucha:
+
+
+
 
 
 
