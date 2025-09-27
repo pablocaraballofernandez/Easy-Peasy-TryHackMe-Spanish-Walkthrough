@@ -56,11 +56,11 @@ Con -p- examina el rango completo de puertos.
 
 Ahora lanzaré un gobuster con la wordlist common.txt (/usr/share/wordlist/dirb/common.txt) para intentar ubicar posibles directorios ocultos o vulnerables:  
 
+![imágenes](Images/2.png)
+
 **dir:** le decimos a gobuster que vamos a buscar directorios.  
 **-u:** indicamos que vamos a proporcionar la URL.  
 **-W:** la wordlist que vamos a utilizar.  
-
-![imágenes](Images/2.png)
 
 Vamos a curiosear en el directorio /hidden y solo encontramos esta imagen:  
 
@@ -116,6 +116,9 @@ He ido probando en orden con John The Ripper, pero solo mostraré la foto del re
 
 ![imágenes](Images/13.png)
 
+**--format:** indicamos el tipo de codificación del código que vamos a poner.  
+**--wordlist:** proporcionamos la wordlist que vamos a utilizar.  
+
 ## Esteganografía  
 
 Ahora debemos de encontrar la contraseña para ssh, después de bastante tiempo buscando opciones, decidí por intentar mirar lo archivos ocultos tras la foto de los números de la página anterior.
@@ -157,6 +160,22 @@ La escalada de privilegios es bastante sencilla, debemos de acceder al directori
 Modificamos el archivo y añadimos un script con bash para conectarnos desde otra terminal abriendo un puerto de escucha al puerto 8080:
 
 ![imágenes](Images/23.png)
+
+**bash:** inicia una shell de bash.  
+**-i:** activa el modo interactivo(Permite escribir comandos y ver respuestas).  
+**>:** redirección de salida standar, esto significa que la respuesta del sistema va a ser redirigida.
+**&:** también incluye errores.
+**/dev/tcp/:** archivo especial de bash para realizar la conexión.
+**8080:** puerto de escucha.
+**0:** file descriptor.
+**>&1:** redirige al file descriptor.
+
+#### ¿Qué hace todo junto?
+
+**· Inicia una shell bash interactiva.**  
+**· Redirige toda la salida hacia la conexión TCP.**  
+**· Redirige la entrada desde la misma conexión.**  
+**· Control total de la shell a través de la red.**  
 
 ![imágenes](Images/24.png)
 
