@@ -33,8 +33,8 @@ Guía completa y detallada de la máquina **EASYPEASY** de TryHackMe, documentan
 - **Gobuster:** - Identificación de directorios
 - **Haiti** - Identificación de hashes
 - **John The Ripper** - Fuerza bruta para decodificación de hashes
-- 
 
+  
 ### Clonar el Repositorio
 ```bash
 git clone https://github.com/pablocaraballofernandez/Easy-Peasy-TryHackMe-Spanish-Walkthrough.git 
