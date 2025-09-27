@@ -163,12 +163,12 @@ Modificamos el archivo y añadimos un script con bash para conectarnos desde otr
 
 **bash:** inicia una shell de bash.  
 **-i:** activa el modo interactivo(Permite escribir comandos y ver respuestas).  
-**>:** redirección de salida standar, esto significa que la respuesta del sistema va a ser redirigida.
-**&:** también incluye errores.
-**/dev/tcp/:** archivo especial de bash para realizar la conexión.
-**8080:** puerto de escucha.
-**0:** file descriptor.
-**>&1:** redirige al file descriptor.
+**>:** redirección de salida standar, esto significa que la respuesta del sistema va a ser redirigida.  
+**&:** también incluye errores.  
+**/dev/tcp/:** archivo especial de bash para realizar la conexión.  
+**8080:** puerto de escucha.  
+**0:** file descriptor.  
+**>&1:** redirige al file descriptor.  
 
 #### ¿Qué hace todo junto?
 
