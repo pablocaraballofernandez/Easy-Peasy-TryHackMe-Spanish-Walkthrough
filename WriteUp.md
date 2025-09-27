@@ -90,7 +90,7 @@ Utilizamos un identificador de hashes, yo he utilizado uno online pero hay otra 
 
 ![imágenes](Images/8.png)
 
-Con esto ya sabemos que el hash esta codificado en md5, con lo que sabemos que es vulnerable, a través de la página ÑADIR HASH DECODER decodificamos el hash y obtenemos la flag:
+Con esto ya sabemos que el hash esta codificado en md5, con lo que sabemos que es vulnerable, a través de la página [Hash Decoder](https://md5hashing.net/hash) decodificamos el hash y obtenemos la flag:
 
 ![imágenes](Images/9.png)
 
@@ -98,7 +98,7 @@ La tercera la encontre mirando el código del apache:
 
 ![imágenes](Images/10.png)
 
-Mirando el código de la página, también encontramos el directorio oculto pero codificado, ahora utilizare cyberchef para la decodificación:
+Mirando el código de la página, también encontramos el directorio oculto pero codificado, ahora utilizare [Cyberchef](https://gchq.github.io/CyberChef/) para la decodificación:
 
 ![imágenes](Images/1011ç.png)
 
