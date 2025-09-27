@@ -1,3 +1,19 @@
+<div align="center">
+  
+# TryHackMe - IDE 
+
+</div>
+
+<div align="center">
+ 
+## GUÍA COMPLETA EN ESPAÑOL 
+
+
+  [![TryHackMe](https://img.shields.io/badge/Platform-TryHackMe-success?style=for-the-badge)](#)
+  [![TryHackME](https://img.shields.io/badge/Difficulty-Easy-blue?style=for-the-badge)](#)
+  [![TryHackME](https://img.shields.io/badge/OS-Linux-orange?style=for-the-badge)](#)
+
+</div>
 Para empezar como buenos hackers, lanzamos el siguiente comando de nmap:
 
 **¿Por qué este comando de nmap?**
